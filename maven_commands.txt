@@ -1,0 +1,109 @@
+# Essential Maven Commands
+
+## Project Lifecycle Commands
+
+# Compile the project
+mvn clean compile
+# Removes the target directory and compiles the Java source code
+
+# Package the project
+mvn clean package
+# Removes the target directory, compiles the code, and packages it (e.g., into a WAR file)
+
+# Install the package to local repository
+mvn clean install
+# Removes the target directory, compiles, packages, and installs the package to your local Maven repository
+
+# Deploy the package to a remote repository
+mvn deploy
+# Compiles, packages, and deploys the package to a remote repository
+
+## Testing Commands
+
+# Run tests
+mvn test
+# Compiles and runs the unit tests
+
+# Skip tests
+mvn package -DskipTests
+# Packages the application without running tests
+
+# Run a single test class
+mvn test -Dtest=TestClassName
+# Runs only the specified test class
+
+## Dependency Commands
+
+# Display dependency tree
+mvn dependency:tree
+# Shows all dependencies in a tree structure
+
+# Analyze dependencies
+mvn dependency:analyze
+# Analyzes dependencies for usage
+
+# Copy dependencies to a directory
+mvn dependency:copy-dependencies
+# Copies all dependencies to target/dependency folder
+
+## Project Information Commands
+
+# Generate site documentation
+mvn site
+# Generates site documentation for your project
+
+# View project details
+mvn help:effective-pom
+# Shows the effective POM for your project with all inherited information
+
+## Plugin Execution Commands
+
+# Generate sources with a plugin
+mvn generate-sources
+# Executes any source generation plugins
+
+# Run Tomcat (if plugin is configured)
+mvn tomcat7:run
+# Starts Tomcat server with your application
+
+# Run Jetty (if plugin is configured)
+mvn jetty:run
+# Starts Jetty server with your application
+
+## Custom Configurations
+
+# Using profiles
+mvn clean package -P profileName
+# Activates a specific profile during the build
+
+# Setting properties
+mvn clean package -Dproperty=value
+# Sets a property value for the build
+
+## Useful Options
+
+# Show verbose output
+mvn -X clean package
+# Shows debug output to identify build issues
+
+# Work offline
+mvn -o clean package
+# Builds without checking for updates from remote repositories
+
+# Use multiple threads
+mvn -T 4 clean package
+# Uses 4 threads to build the project faster
+
+# Force update of dependencies
+mvn -U clean package
+# Forces update of dependencies from remote repositories
+
+## Web Application Specific Commands
+
+# Generate WAR file
+mvn war:war
+# Generates a WAR file for your web application
+
+# Exploded deployment
+mvn war:exploded
+# Creates an exploded web application directory structure
